@@ -5,8 +5,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven:'maven_3_5_3', mavenLocalRepo: '.repository',mavenSettingsConfig:'my-config') {
-               //  withMaven(maven : 'maven_3_5_3') {
+               withMaven(maven : 'maven_3_5_3') {
                     sh 'mvn clean compile'
                 }
             }
